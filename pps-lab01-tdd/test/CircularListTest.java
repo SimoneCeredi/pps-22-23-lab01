@@ -19,7 +19,7 @@ public class CircularListTest {
     }
 
     private void addElements(int nElements) {
-        for (int i = 0; i < nElements; i++) {
+        for (int i = 1; i < nElements; i++) {
             this.circularList.add(i);
         }
     }
@@ -35,6 +35,10 @@ public class CircularListTest {
         assertEquals(3, this.circularList.size());
     }
 
-    
+    @Test
+    void testCanGetFirstElement() {
+        this.addElements(3);
+        assertEquals(1, this.circularList.next().get());
+    }
 
 }
