@@ -3,6 +3,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+
+import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -33,6 +36,11 @@ public class CircularListTest {
     void testCanAddElements() {
         this.addElements(3);
         assertEquals(3, this.circularList.size());
+    }
+
+    @Test
+    void testEmptyListNextReturnsNothing() {
+        assertEquals(Optional.empty(), this.circularList.next());
     }
 
     @Test
