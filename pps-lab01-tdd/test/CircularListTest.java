@@ -1,4 +1,6 @@
+import lab01.tdd.CircularList;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -7,11 +9,14 @@ import org.junit.jupiter.api.Test;
  */
 public class CircularListTest {
 
-    //TODO: test implementation
+    private CircularList circularList;
 
-    @Disabled
-    @Test public void testTodo(){
-        Assertions.fail();
+    //TODO: test implementation
+    @BeforeEach
+    void beforeEach(){
+        this.circularList = new CircularListImpl();
     }
+
+    
 
 }
