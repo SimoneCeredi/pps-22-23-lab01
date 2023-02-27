@@ -44,9 +44,4 @@ public interface CircularList {
      */
     Iterator<Integer> previousIterator();
 
-    /**
-     * Reset the position of current element back to the first one of the list.
-     * Note the first one is the first added to the list.
-     */
-    void reset();
 }
