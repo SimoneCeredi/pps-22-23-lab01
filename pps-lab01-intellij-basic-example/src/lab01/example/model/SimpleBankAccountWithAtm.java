@@ -10,7 +10,7 @@ public class SimpleBankAccountWithAtm implements BankAccount {
 
     @Override
     public AccountHolder getHolder() {
-        return null;
+        return this.simpleBankAccount.getHolder();
     }
 
     @Override
