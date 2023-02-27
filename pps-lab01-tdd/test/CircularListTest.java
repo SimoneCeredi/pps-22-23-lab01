@@ -19,7 +19,7 @@ public class CircularListTest {
     }
 
     private void addElements(int nElements) {
-        for (int i = 1; i < nElements; i++) {
+        for (int i = 1; i <= nElements; i++) {
             this.circularList.add(i);
         }
     }
