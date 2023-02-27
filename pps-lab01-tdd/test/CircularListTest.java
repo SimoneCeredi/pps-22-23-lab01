@@ -58,4 +58,17 @@ public class CircularListTest {
 
     }
 
+    @Test
+    void testEmptyListPreviousReturnsNothing() {
+        assertEquals(Optional.empty(), this.circularList.previous());
+    }
+
+    @Test
+    void testListBackwordsCircular() {
+        this.addElements(2);
+        assertEquals(2, this.circularList.previous().get());
+        assertEquals(1, this.circularList.previous().get());
+        assertEquals(2, this.circularList.previous().get());
+    }
+
 }

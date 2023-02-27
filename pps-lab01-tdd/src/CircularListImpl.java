@@ -15,7 +15,7 @@ public class CircularListImpl implements CircularList {
         if (this.list.isEmpty()) {
             return;
         }
-        this.index = index == -1 ? this.list.size() - 1 : index % this.list.size();
+        this.index = index < 0 ? this.list.size() - 1 : index % this.list.size();
     }
 
     @Override
@@ -41,7 +41,8 @@ public class CircularListImpl implements CircularList {
 
     @Override
     public Optional<Integer> previous() {
-        return Optional.empty();
+        setIndex(--this.index);
+        return this.list.isEmpty() ? Optional.empty() : Optional.of(this.list.get(this.index));
     }
 
     @Override
