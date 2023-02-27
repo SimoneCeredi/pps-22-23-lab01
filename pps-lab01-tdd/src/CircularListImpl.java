@@ -1,10 +1,18 @@
 import lab01.tdd.CircularList;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 public class CircularListImpl implements CircularList {
 
     private final List<Integer> list = new ArrayList<>();
+    private int index = -1;
+
+    private void setIndex(int index) {
+        this.index = index % this.list.size();
+    }
+
     @Override
     public void add(int element) {
         this.list.add(element);
@@ -22,7 +30,8 @@ public class CircularListImpl implements CircularList {
 
     @Override
     public Optional<Integer> next() {
-        return Optional.of(this.list.listIterator().next());
+        setIndex(++this.index);
+        return this.list.isEmpty() ? Optional.empty(): Optional.of(this.list.get(this.index));
     }
 
     @Override

@@ -41,4 +41,13 @@ public class CircularListTest {
         assertEquals(1, this.circularList.next().get());
     }
 
+    @Test
+    void testListReturnsToFirst() {
+        this.addElements(2);
+        this.circularList.next();
+        assertEquals(2, this.circularList.next().get());
+        assertEquals(1, this.circularList.next().get());
+
+    }
+
 }
