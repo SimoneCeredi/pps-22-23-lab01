@@ -8,7 +8,6 @@ import java.util.Optional;
 public class CircularListImpl implements CircularList {
 
     private final List<Integer> list = new ArrayList<>();
-    private final Iterator<Integer> iterator = list.iterator();
     private int index = -1;
 
     private void setIndex(int index) {
