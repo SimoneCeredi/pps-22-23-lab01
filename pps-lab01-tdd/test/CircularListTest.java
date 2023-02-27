@@ -19,6 +19,11 @@ public class CircularListTest {
     }
 
     @Test
+    void testIsNewListEmpty() {
+        assertTrue(this.circularList.isEmpty());
+    }
+
+    @Test
     void testCanAddElements() {
         this.circularList.add(1);
         this.circularList.add(2);
