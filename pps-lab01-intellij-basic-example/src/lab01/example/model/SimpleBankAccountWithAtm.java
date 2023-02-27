@@ -1,8 +1,9 @@
 package lab01.example.model;
 
-public class SimpleBankAccountWithAtm implements BankAccount{
+public class SimpleBankAccountWithAtm implements BankAccount {
 
     private SimpleBankAccount simpleBankAccount;
+
     public SimpleBankAccountWithAtm(SimpleBankAccount simpleBankAccount) {
         this.simpleBankAccount = simpleBankAccount;
     }
@@ -19,11 +20,11 @@ public class SimpleBankAccountWithAtm implements BankAccount{
 
     @Override
     public void deposit(int userID, double amount) {
-        this.simpleBankAccount.deposit(userID, amount-1);
+        this.simpleBankAccount.deposit(userID, amount - 1);
     }
 
     @Override
     public void withdraw(int userID, double amount) {
-
+        this.simpleBankAccount.withdraw(userID, amount + 1);
     }
 }
