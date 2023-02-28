@@ -31,14 +31,31 @@ public class CircularListTest {
     void testAddElement() {
         addElements(2);
         Iterator<Integer> iterator = this.circularList.forwardIterator();
-        assertEquals(1, iterator.next());
-        assertEquals(2, iterator.next());
-        assertEquals(1, iterator.next());
+        for (int i = 0; i < 100; i++) {
+            assertEquals(1, iterator.next());
+            assertEquals(2, iterator.next());
+        }
     }
 
     @Test
     void testForwardIteratorOnEmptyList() {
         Iterator<Integer> iterator = this.circularList.forwardIterator();
-        assertThrows(IllegalStateException.class, () -> iterator.next());
+        assertThrows(IllegalStateException.class, iterator::next);
+    }
+
+    @Test
+    void testAddElementPreviousIterator() {
+        addElements(2);
+        Iterator<Integer> iterator = this.circularList.previousIterator();
+        for (int i = 0; i < 100; i++) {
+            assertEquals(2, iterator.next());
+            assertEquals(1, iterator.next());
+        }
+    }
+
+    @Test
+    void testPreviousIteratorOnEmptyList() {
+        Iterator<Integer> iterator = this.circularList.forwardIterator();
+        assertThrows(IllegalStateException.class, iterator::next);
     }
 }

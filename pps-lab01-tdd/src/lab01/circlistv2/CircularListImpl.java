@@ -35,7 +35,7 @@ public class CircularListImpl implements CircularList {
 
             @Override
             public Integer next() {
-                if(!this.hasNext()) {
+                if (!this.hasNext()) {
                     throw new IllegalStateException();
                 }
                 return list.get(index++ % list.size());
@@ -45,7 +45,25 @@ public class CircularListImpl implements CircularList {
 
     @Override
     public Iterator<Integer> previousIterator() {
-        return null;
+        return new Iterator<>() {
+            private int index = list.size() - 1;
+
+            @Override
+            public boolean hasNext() {
+                return list.size() != 0;
+            }
+
+            @Override
+            public Integer next() {
+                if (!this.hasNext()) {
+                    throw new IllegalStateException();
+                }
+                if (index < 0) {
+                    index = list.size() - 1;
+                }
+                return list.get(index-- % list.size());
+            }
+        };
     }
 
 }
