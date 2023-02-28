@@ -1,4 +1,4 @@
-package lab01.circlistv2;
+package lab01.circlistiterator;
 
 import java.util.Iterator;
 

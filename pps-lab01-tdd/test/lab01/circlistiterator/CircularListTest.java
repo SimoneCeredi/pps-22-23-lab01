@@ -1,4 +1,4 @@
-package lab01.circlistv2;
+package lab01.circlistiterator;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
