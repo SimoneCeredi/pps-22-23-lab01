@@ -28,8 +28,14 @@ public class CircularListTest {
     }
 
     @Test
-    void testAddElement() {
-        addElements(2);
+    void testCanAddElements() {
+        this.addElements(3);
+        assertEquals(3, this.circularList.size());
+    }
+
+    @Test
+    void testForwardIterator() {
+        this.addElements(2);
         Iterator<Integer> iterator = this.circularList.forwardIterator();
         for (int i = 0; i < 100; i++) {
             assertEquals(1, iterator.next());
@@ -44,8 +50,8 @@ public class CircularListTest {
     }
 
     @Test
-    void testAddElementPreviousIterator() {
-        addElements(2);
+    void testPreviousIterator() {
+        this.addElements(2);
         Iterator<Integer> iterator = this.circularList.previousIterator();
         for (int i = 0; i < 100; i++) {
             assertEquals(2, iterator.next());
