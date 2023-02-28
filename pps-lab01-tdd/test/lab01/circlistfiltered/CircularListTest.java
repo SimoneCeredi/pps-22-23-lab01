@@ -13,8 +13,20 @@ class CircularListTest {
         this.circularList = new CircularListImpl();
     }
 
+    private void addElements(int nElements) {
+        for (int i = 1; i <= nElements; i++) {
+            this.circularList.add(i);
+        }
+    }
+
     @Test
     void testListIsEmpty() {
         assertTrue(this.circularList.isEmpty());
+    }
+
+    @Test
+    void testCanAddElements() {
+        this.addElements(3);
+        assertEquals(3, this.circularList.size());
     }
 }

@@ -8,6 +8,16 @@ public class CircularListImpl implements CircularList {
     private List<Integer> list = new LinkedList<>();
     @Override
     public boolean isEmpty() {
-        return list.isEmpty();
+        return this.list.isEmpty();
+    }
+
+    @Override
+    public int size() {
+        return this.list.size();
+    }
+
+    @Override
+    public void add(int element) {
+        this.list.add(element);
     }
 }
