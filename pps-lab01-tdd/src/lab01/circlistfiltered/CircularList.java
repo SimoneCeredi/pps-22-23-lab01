@@ -1,5 +1,8 @@
 package lab01.circlistfiltered;
 
+import java.util.Optional;
+import java.util.function.Predicate;
+
 public interface CircularList {
     /**
      * Checks if the list is empty
@@ -21,4 +24,13 @@ public interface CircularList {
      * @param element the element to be added to the list
      */
     void add(int element);
+
+    /**
+     * Finds and returns the next element that satisfies a given condition
+     * @param condition the filtering condition
+     * @return the next element that satisfies a given condition or an empty optional
+     */
+    Optional<Integer> filteredNext(Predicate<Integer> condition);
+
+
 }
